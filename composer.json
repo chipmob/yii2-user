@@ -1,0 +1,54 @@
+{
+  "name": "chipmob/yii2-user",
+  "description": "User registration and authentication module for Yii2",
+  "keywords": ["yii2", "yii2-user", "user management", "chipmob"],
+  "type": "yii2-extension",
+  "license": "MIT",
+  "support": {
+    "issues": "https://github.com/chipmob/yii2-user/issues?state=open",
+    "source": "https://github.com/chipmob/yii2-user"
+  },
+  "authors": [
+    {
+      "name": "chipmob",
+      "email": "chipmob@gmail.com"
+    }
+  ],
+  "minimum-stability": "stable",
+  "require": {
+    "php": ">=7.4",
+    "ext-iconv": "*",
+    "ext-intl": "*",
+    "ext-mbstring": "*",
+    "yiisoft/yii2": "~2.0",
+    "yiisoft/yii2-bootstrap4": "~2.0",
+    "yiisoft/yii2-swiftmailer": "~2.0",
+    "yiisoft/yii2-authclient": "~2.0",
+    "npm-asset/clipboard": "~2.0"
+  },
+  "replace": {
+    "symfony/polyfill-iconv": "*",
+    "symfony/polyfill-intl-idn": "*",
+    "symfony/polyfill-mbstring": "*"
+  },
+  "autoload": {
+    "psr-4": {
+      "chipmob\\user\\": ""
+    }
+  },
+  "extra": {
+    "bootstrap": "chipmob\\user\\Bootstrap"
+  },
+  "config": {
+    "process-timeout": 1800,
+    "fxp-asset": {
+      "enabled": false
+    }
+  },
+  "repositories": [
+    {
+      "type": "composer",
+      "url": "https://asset-packagist.org"
+    }
+  ]
+}
