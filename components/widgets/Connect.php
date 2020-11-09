@@ -21,14 +21,29 @@ class Connect extends AuthChoice
 </div>
 HTML;
 
+    public string $customCss = <<<CSS
+.auth-clients {
+    margin: 0 -1em;
+    padding: 0 1em;
+}
+.auth-clients li {
+    margin: 0 1em 1em 0;
+}
+CSS;
+
     /** @inheritdoc */
     public function init()
     {
-        AuthChoiceAsset::register(Yii::$app->view);
+        $id = $this->id;
+        $view = Yii::$app->view;
+        AuthChoiceAsset::register($view);
         if ($this->popupMode) {
-            Yii::$app->view->registerJs("\$('#" . $this->id . "').authchoice();");
+            $view->registerJs("jQuery('#$id').authchoice();");
         }
-        $this->options['id'] = $this->id;
+        if (Yii::$app->user->isGuest) {
+            $view->registerCss($this->customCss);
+        }
+        $this->options['id'] = $id;
         echo Html::beginTag('div', $this->options);
     }
 

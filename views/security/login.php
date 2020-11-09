@@ -12,17 +12,6 @@ use yii\bootstrap4\Html;
 $this->title = Yii::t('user', 'Sign in');
 $this->params['breadcrumbs'][] = $this->title;
 
-$css = <<<CSS
-.auth-clients {
-    margin: 0 -1em;
-    padding: 0 1em;
-}
-.auth-clients li {
-    margin: 0 1em 1em 0;
-}
-CSS;
-$this->registerCss($css);
-
 $this->beginContent('@user/views/_layout.php');
 
 $form = ActiveForm::begin([
