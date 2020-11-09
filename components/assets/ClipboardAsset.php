@@ -8,6 +8,6 @@ class ClipboardAsset extends AssetBundle
 {
     public $sourcePath = '@npm/clipboard/dist';
     public $js = [
-        'clipboard.min.js',
+        YII_DEBUG ? 'clipboard.js' : 'clipboard.min.js',
     ];
 }
