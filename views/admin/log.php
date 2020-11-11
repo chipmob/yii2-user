@@ -42,7 +42,7 @@ echo GridView::widget([
         ],
         [
             'attribute' => 'created_by',
-            'value' => fn(Log $model) => $model->author->username, // TODO: if `$model->author` is null, get `->username` do not raise error
+            'value' => fn(Log $model) => $model->author ? $model->author->username : null,
             'filter' => Html::activeDropDownList($searchModel, 'created_by',
                 Log::getListOfAuthors(),
                 [
