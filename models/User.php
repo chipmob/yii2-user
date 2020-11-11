@@ -67,7 +67,7 @@ class User extends ActiveRecord implements IdentityInterface
     const OAUTH_SESSION_KEY = 'oauth_user_id';
     const TOTP_SESSION_KEY = 'totp_user_id';
 
-    public static string $usernameRegexp = '/^[-a-zA-Z0-9_\.@]+$/';
+    public static string $usernameRegexp = '/^[-a-zA-Z0-9_\.]+$/';
     public static string $passwordRegexp = YII_DEBUG ? '/.+/' : '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9])+$/';
     public static int $minLoginLength = YII_DEBUG ? 4 : 6;
     public static int $minPasswordLength = YII_DEBUG ? 4 : 8;
@@ -98,13 +98,13 @@ class User extends ActiveRecord implements IdentityInterface
             [['username', 'email'], 'trim'],
             [['username', 'email'], 'required'],
             [['username', 'email'], 'string', 'min' => self::$minLoginLength, 'max' => 255],
-            ['username', 'match', 'pattern' => static::$usernameRegexp],
+            ['username', 'match', 'pattern' => static::$usernameRegexp, 'message' => Yii::t('user', 'Username must contain latin letters, digits and -._ symbols')],
             ['email', 'email'],
             ['username', 'unique', 'message' => Yii::t('user', 'This username has already been taken')],
             ['email', 'unique', 'message' => Yii::t('user', 'This email address has already been taken')],
             ['password', 'required', 'skipOnEmpty' => $this->module->enableGeneratingPassword, 'on' => [self::SCENARIO_REGISTER]],
             ['password', 'string', 'min' => static::$minPasswordLength, 'max' => 72],
-            ['password', 'match', 'pattern' => static::$passwordRegexp],
+            ['password', 'match', 'pattern' => static::$passwordRegexp, 'message' => Yii::t('user', 'Password must contain only latin letters (least one upper and lower cases) and least one digits')],
             ['password', 'default', 'value' => Password::generate(8), 'on' => [self::SCENARIO_CREATE, self::SCENARIO_REGISTER, self::SCENARIO_CONNECT]],
             ['access_token', 'unique'],
             [['confirmed_at'], 'default', 'value' => time(), 'skipOnEmpty' => $this->module->enableConfirmation, 'on' => [self::SCENARIO_CREATE, self::SCENARIO_REGISTER]],

@@ -17,6 +17,8 @@
  * NOTE: this file must be saved in UTF-8 encoding.
  */
 return [
+    'Username must contain latin letters, digits and -._ symbols' => 'Имя должно состоять из латинских букв, цифр и символов -._',
+    'Password must contain latin letters (least one upper and lower cases) and least one digits' => 'Пароль должен состоять из латинских букв (как минимум по одной заглавной и прописной букве) и как минимум одной цифры',
     'User agent' => 'User Agent',
     '(not set)' => '(не задано)',
     'A confirmation message has been sent to your new email address' => 'Ссылка для подтверждения была отправлена вам на почту',

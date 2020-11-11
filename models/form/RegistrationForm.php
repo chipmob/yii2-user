@@ -34,13 +34,13 @@ class RegistrationForm extends Model
             [['username', 'email'], 'trim'],
             [['username', 'email'], 'required'],
             [['username', 'email'], 'string', 'min' => User::$minLoginLength, 'max' => 255],
-            ['username', 'match', 'pattern' => User::$usernameRegexp],
+            ['username', 'match', 'pattern' => User::$usernameRegexp, 'message' => Yii::t('user', 'Username must contain latin letters, digits and -._ symbols')],
             ['email', 'email'],
             ['username', 'unique', 'targetClass' => User::class, 'message' => Yii::t('user', 'This username has already been taken')],
             ['email', 'unique', 'targetClass' => User::class, 'message' => Yii::t('user', 'This email address has already been taken')],
             ['password', 'required', 'skipOnEmpty' => $this->module->enableGeneratingPassword],
             ['password', 'string', 'min' => User::$minPasswordLength, 'max' => 72],
-            ['password', 'match', 'pattern' => User::$passwordRegexp],
+            ['password', 'match', 'pattern' => User::$passwordRegexp, 'message' => Yii::t('user', 'Password must contain only latin letters (least one upper and lower cases) and least one digits')],
         ];
     }
 
