@@ -68,7 +68,7 @@ class User extends ActiveRecord implements IdentityInterface
     const TOTP_SESSION_KEY = 'totp_user_id';
 
     public static string $usernameRegexp = '/^[-a-zA-Z0-9_\.@]+$/';
-    public static string $passwordRegexp = YII_DEBUG ? '/.+/' : '^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9])+$';
+    public static string $passwordRegexp = YII_DEBUG ? '/.+/' : '/^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])([a-zA-Z0-9])+$/';
     public static int $minLoginLength = YII_DEBUG ? 4 : 6;
     public static int $minPasswordLength = YII_DEBUG ? 4 : 8;
 
