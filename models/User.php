@@ -104,7 +104,7 @@ class User extends ActiveRecord implements IdentityInterface
             ['email', 'unique', 'message' => Yii::t('user', 'This email address has already been taken')],
             ['password', 'required', 'skipOnEmpty' => $this->module->enableGeneratingPassword, 'on' => [self::SCENARIO_REGISTER]],
             ['password', 'string', 'min' => static::$minPasswordLength, 'max' => 72],
-            ['password', 'match', 'pattern' => static::$passwordRegexp, 'message' => Yii::t('user', 'Password must contain only latin letters (least one upper and lower cases) and least one digits')],
+            ['password', 'match', 'pattern' => static::$passwordRegexp, 'message' => Yii::t('user', 'Password must contain latin letters (least one upper and lower cases) and least one digits')],
             ['password', 'default', 'value' => Password::generate(8), 'on' => [self::SCENARIO_CREATE, self::SCENARIO_REGISTER, self::SCENARIO_CONNECT]],
             ['access_token', 'unique'],
             [['confirmed_at'], 'default', 'value' => time(), 'skipOnEmpty' => $this->module->enableConfirmation, 'on' => [self::SCENARIO_CREATE, self::SCENARIO_REGISTER]],

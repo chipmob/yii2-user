@@ -40,7 +40,7 @@ class RegistrationForm extends Model
             ['email', 'unique', 'targetClass' => User::class, 'message' => Yii::t('user', 'This email address has already been taken')],
             ['password', 'required', 'skipOnEmpty' => $this->module->enableGeneratingPassword],
             ['password', 'string', 'min' => User::$minPasswordLength, 'max' => 72],
-            ['password', 'match', 'pattern' => User::$passwordRegexp, 'message' => Yii::t('user', 'Password must contain only latin letters (least one upper and lower cases) and least one digits')],
+            ['password', 'match', 'pattern' => User::$passwordRegexp, 'message' => Yii::t('user', 'Password must contain latin letters (least one upper and lower cases) and least one digits')],
         ];
     }
 
