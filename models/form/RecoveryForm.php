@@ -69,7 +69,7 @@ class RecoveryForm extends Model
 
     public function reset()
     {
-        $this->user->setAttributes($this->attributes);
+        $this->user->password = $this->password;
         if ($this->user->resetPassword()) {
             Yii::$app->session->setFlash('success', Yii::t('user', 'Your password has been changed successfully'));
         } else {

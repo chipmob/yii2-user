@@ -2,6 +2,7 @@
 
 namespace chipmob\user\controllers;
 
+use chipmob\user\components\helpers\Password;
 use chipmob\user\components\traits\AjaxValidationTrait;
 use chipmob\user\components\traits\ModuleTrait;
 use chipmob\user\models\search\ActionSearch;
@@ -250,6 +251,7 @@ class AdminController extends Controller
             throw new ForbiddenHttpException(Yii::t('user', 'Password generation is not possible for admin users'));
         }
 
+        $user->password = Password::generate(8);
         if ($user->resendPassword()) {
             Yii::$app->session->setFlash('success', Yii::t('user', 'New Password has been generated and sent to user'));
         } else {

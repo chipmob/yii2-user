@@ -258,7 +258,6 @@ class User extends ActiveRecord implements IdentityInterface
 
     public function resendPassword(): bool
     {
-        $this->password = Password::generate(8);
         if ($this->save(false, ['password_hash'])) {
             Yii::$container->get(Mailer::class)->sendGeneratedPassword($this, ['password' => $this->password]);
             return true;
