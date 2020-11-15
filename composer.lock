@@ -227,16 +227,16 @@
         },
         {
             "name": "egulias/email-validator",
-            "version": "2.1.23",
+            "version": "2.1.24",
             "source": {
                 "type": "git",
                 "url": "https://github.com/egulias/EmailValidator.git",
-                "reference": "5fa792ad1853ae2bc60528dd3e5cbf4542d3c1df"
+                "reference": "ca90a3291eee1538cd48ff25163240695bd95448"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/5fa792ad1853ae2bc60528dd3e5cbf4542d3c1df",
-                "reference": "5fa792ad1853ae2bc60528dd3e5cbf4542d3c1df",
+                "url": "https://api.github.com/repos/egulias/EmailValidator/zipball/ca90a3291eee1538cd48ff25163240695bd95448",
+                "reference": "ca90a3291eee1538cd48ff25163240695bd95448",
                 "shasum": ""
             },
             "require": {
@@ -283,9 +283,15 @@
             ],
             "support": {
                 "issues": "https://github.com/egulias/EmailValidator/issues",
-                "source": "https://github.com/egulias/EmailValidator/tree/2.1.23"
+                "source": "https://github.com/egulias/EmailValidator/tree/2.1.24"
             },
-            "time": "2020-10-31T20:37:35+00:00"
+            "funding": [
+                {
+                    "url": "https://github.com/egulias",
+                    "type": "github"
+                }
+            ],
+            "time": "2020-11-14T15:56:27+00:00"
         },
         {
             "name": "ezyang/htmlpurifier",
@@ -489,16 +495,16 @@
         },
         {
             "name": "yiisoft/yii2",
-            "version": "2.0.39.1",
+            "version": "2.0.39.2",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-framework.git",
-                "reference": "964237b01725fb636e5291dfe72f481227902bc0"
+                "reference": "c1d88666f4fc4702af5d492e4c5c35353c9ac6ca"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/964237b01725fb636e5291dfe72f481227902bc0",
-                "reference": "964237b01725fb636e5291dfe72f481227902bc0",
+                "url": "https://api.github.com/repos/yiisoft/yii2-framework/zipball/c1d88666f4fc4702af5d492e4c5c35353c9ac6ca",
+                "reference": "c1d88666f4fc4702af5d492e4c5c35353c9ac6ca",
                 "shasum": ""
             },
             "require": {
@@ -606,20 +612,20 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-10T20:15:57+00:00"
+            "time": "2020-11-13T10:15:29+00:00"
         },
         {
             "name": "yiisoft/yii2-authclient",
-            "version": "2.2.8",
+            "version": "2.2.9",
             "source": {
                 "type": "git",
                 "url": "https://github.com/yiisoft/yii2-authclient.git",
-                "reference": "18bd78bde4d8d88029d9026d6b44d0f26bd6659d"
+                "reference": "f38a0c931c1ae6459a8e221fc693ee31a4c1bab6"
             },
             "dist": {
                 "type": "zip",
-                "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/18bd78bde4d8d88029d9026d6b44d0f26bd6659d",
-                "reference": "18bd78bde4d8d88029d9026d6b44d0f26bd6659d",
+                "url": "https://api.github.com/repos/yiisoft/yii2-authclient/zipball/f38a0c931c1ae6459a8e221fc693ee31a4c1bab6",
+                "reference": "f38a0c931c1ae6459a8e221fc693ee31a4c1bab6",
                 "shasum": ""
             },
             "require": {
@@ -698,7 +704,7 @@
                     "type": "tidelift"
                 }
             ],
-            "time": "2020-11-10T12:55:13+00:00"
+            "time": "2020-11-13T10:11:46+00:00"
         },
         {
             "name": "yiisoft/yii2-bootstrap4",
