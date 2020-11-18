@@ -33,28 +33,16 @@ class Bootstrap implements BootstrapInterface
             Yii::setAlias('@user', __DIR__);
             $this->_modelMap = array_merge($this->_modelMap, $module->modelMap);
             foreach ($this->_modelMap as $name => $definition) {
-                if (preg_match("/(Form|Search|Query)$/", $name, $match)) {
-                    switch ($match[1]) {
-                        case 'Form':
-                            $folder = 'form\\';
-                            break;
-                        case 'Search':
-                            $folder = 'search\\';
-                            break;
-                        case 'Query':
-                            $folder = 'query\\';
-                            break;
-                        default:
-                            $folder = '';
-                    }
-                    $class = "chipmob\\user\\models\\" . $folder . $name;
+                if (preg_match("/(Form|Query|Search)$/", $name, $match)) {
+                    $folder = strtolower($match[1]);
+                    $class = "chipmob\\user\\models\\$folder\\$name";
                 } else {
-                    $class = "chipmob\\user\\models\\" . $name;
+                    $class = "chipmob\\user\\models\\$name";
                 }
                 Yii::$container->set($class, $definition);
                 $modelClass = is_array($definition) ? $definition['class'] : $definition;
                 $module->modelMap[$name] = $modelClass;
-                if (in_array($name, ['User', 'Profile', 'Token', 'Account', 'Action', 'Log'])) {
+                if (in_array($name, ['Account', 'Action', 'Log', 'Profile', 'Token', 'User'])) {
                     Yii::$container->set("{$name}Query", fn() => $modelClass::find());
                 }
             }
